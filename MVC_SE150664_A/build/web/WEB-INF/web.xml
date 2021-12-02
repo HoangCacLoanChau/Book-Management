@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <listener>
+        <description>ServletContextListener</description>
+        <listener-class>chauhcl.listener.ContextListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>roadmap</param-name>
+        <param-value>/WEB-INF/roadmap.txt</param-value>
+    </context-param>
+    <context-param>
+        <param-name>log4j-config-location</param-name>
+        <param-value>WEB-INF/log4j.properties</param-value>
+    </context-param>
+    <filter>
+        <filter-name>FilterDispatcher</filter-name>
+        <filter-class>chauhcl.Filter.FilterDispatcher</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FilterDispatcher</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>chauhcl.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AddItemToCartServlet</servlet-name>
+        <servlet-class>chauhcl.controller.AddItemToCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddItemToCartServlet</servlet-name>
+        <url-pattern>/AddItemToCartServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CreateNewAccount</servlet-name>
+        <servlet-class>chauhcl.controller.CreateNewAccount</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateNewAccount</servlet-name>
+        <url-pattern>/CreateNewAccount</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>DeleteAccountServlet</servlet-name>
+        <servlet-class>chauhcl.controller.DeleteAccountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteAccountServlet</servlet-name>
+        <url-pattern>/DeleteAccountServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>LogOutServlet</servlet-name>
+        <servlet-class>chauhcl.controller.LogOutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogOutServlet</servlet-name>
+        <url-pattern>/LogOutServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>RemoveItemFromCartServlet</servlet-name>
+        <servlet-class>chauhcl.controller.RemoveItemFromCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RemoveItemFromCartServlet</servlet-name>
+        <url-pattern>/RemoveItemFromCartServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SearchLastnameServlet</servlet-name>
+        <servlet-class>chauhcl.controller.SearchLastnameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchLastnameServlet</servlet-name>
+        <url-pattern>/SearchLastnameServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ShoppingServlet</servlet-name>
+        <servlet-class>chauhcl.controller.ShoppingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShoppingServlet</servlet-name>
+        <url-pattern>/ShoppingServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>StartupServlet</servlet-name>
+        <servlet-class>chauhcl.controller.StartupServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StartupServlet</servlet-name>
+        <url-pattern>/StartupServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>UpdateAccountServlet</servlet-name>
+        <servlet-class>chauhcl.controller.UpdateAccountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateAccountServlet</servlet-name>
+        <url-pattern>/UpdateAccountServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ViewCartServlet</servlet-name>
+        <servlet-class>chauhcl.controller.ViewCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewCartServlet</servlet-name>
+        <url-pattern>/ViewCartServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    
+    <resource-ref>
+        <res-ref-name>DSabc</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    
+</web-app>
